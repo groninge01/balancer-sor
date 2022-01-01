@@ -37091,10 +37091,9 @@ class PoolCacher {
                     }
                 }
                 // Get latest on-chain balances (returns data in string/normalized format)
-                this.pools = yield this.fetchOnChainBalances(
-                    newPools,
-                    isOnChain
-                );
+                //this.pools = await this.fetchOnChainBalances(newPools, isOnChain);
+                //Daniel: on chain balances are being fetched by the beets proxy backend, doesn't need to be done here
+                this.pools = newPools;
                 this.finishedFetchingOnChain = true;
                 return true;
             } catch (err) {
